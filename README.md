@@ -14,8 +14,19 @@ Contributions are always welcome
 ## INSTALL ##
 
 ``` bash
+git clone git@github.com:blitzagency/jsdoc-rst-template.git
+cd jsdoc-rst-template
 pip install sphinx sphinx_rtd_theme
 npm install
 make doc
 make serve
 ```
+
+or for your project:
+
+```bash
+npm install jsdoc-rst-template
+./node_modules/.bin/jsdoc -t ./node_modules/jsdoc-rst-template/template/ --recurse path/to/your/js -d ./doc/rst
+```
+
+

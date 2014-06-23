@@ -1,7 +1,9 @@
 {
   "name": "jsdoc-rst-template",
-  "version": "0.0.0",
-  "description": "jsdoc-rst-template",
+  "version": "0.0.1",
+  "description": "jsdoc3 rst template",
+  "author": "BLITZ",
+  "license": "MIT",
   "devDependencies": {
     "requirejs": "~2.1.14",
     "jsdoc": "~3.3.0-alpha8",
@@ -13,5 +15,9 @@
   },
   "bugs": {
     "url": "https://github.com/blitzagency/jsdoc-rst-template/issues"
+  },
+  "main": "./template/publish.js",
+  "dependencies": {
+    "jsdoc": "~3.3.0-alpha8"
   }
 }
