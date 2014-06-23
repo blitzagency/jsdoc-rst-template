@@ -1,15 +1,7 @@
 {
-  "name": "agency-ui-foundation",
+  "name": "jsdoc-rst-template",
   "version": "0.0.0",
-  "description": "Agency UI Foundation FTW",
-  "main": "karma.conf.js",
-  "directories": {
-    "test": "tests"
-  },
-  "dependencies": {
-    "karma-coverage": "~0.1.2",
-    "istanbul": "~0.1.44"
-  },
+  "description": "jsdoc-rst-template",
   "devDependencies": {
     "requirejs": "~2.1.14",
     "jsdoc": "~3.3.0-alpha8",
@@ -17,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/blitzagency/agency-ui-foundation.git"
+    "url": "git://github.com/blitzagency/jsdoc-rst-template.git"
   },
   "bugs": {
-    "url": "https://github.com/blitzagency/agency-ui-foundation/issues"
+    "url": "https://github.com/blitzagency/jsdoc-rst-template/issues"
   }
 }
