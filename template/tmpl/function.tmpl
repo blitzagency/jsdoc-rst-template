@@ -1,0 +1,28 @@
+<?js
+var self = this;
+var formatTextWithTabs = this.formatTextWithTabs.bind(this);
+var description = obj.description;
+var fields = self.partial('fields.tmpl', obj);
+var examples = obj.examples;
+var tabs = 1;
+
+?>
+.. function:: <?js= obj.name ?><?js= obj.signature ?>
+
+<?js
+if(description){
+    print(self.formatTextWithTabs(description, tabs) + '\n\n');
+}
+
+if(fields){
+    print(self.formatTextWithTabs(fields, tabs) + '\n');
+}
+
+if(examples && examples.length && examples.forEach){
+    examples.forEach(function(ex){
+        ex.formatTextWithTabs = formatTextWithTabs;
+        var str = self.partial('example.tmpl', ex).trim();
+        print(self.formatTextWithTabs(str, tabs) + '\n\n');
+    });
+}
+?>

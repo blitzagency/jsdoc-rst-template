@@ -1,0 +1,9 @@
+<?js
+var data = obj[0];
+?>
+:return: <?js=data.description?>
+<?js
+if(data.type.names){
+    print(':rtype: ' + data.type.names.join('|'));
+}
+?>

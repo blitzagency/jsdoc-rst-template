@@ -1,0 +1,6 @@
+<?js
+var self = obj;
+obj.forEach(function(param){
+    print('\n' + self.partial('param.tmpl', param).trim());
+});
+?>

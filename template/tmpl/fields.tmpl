@@ -1,0 +1,19 @@
+<?js
+var self = this;
+var out = [];
+
+if(obj.augments){
+    out.push(self.partial('extends.tmpl', obj.augments).trim())
+}
+
+if(obj.params){
+    obj.params.partial = self.partial.bind(self);
+    out.push(self.partial('params.tmpl', obj.params).trim())
+}
+
+if (obj.returns){
+    out.push(self.partial('return.tmpl', obj.returns).trim())
+}
+
+print(out.join('\n'));
+?>

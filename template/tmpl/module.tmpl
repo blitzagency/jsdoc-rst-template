@@ -1,0 +1,32 @@
+<?js
+var self = this;
+var data = obj.docs;
+var heading;
+
+heading = data.qualname + '\n' +
+          this.repeat('=', data.qualname.length)
+
+if(data.description){
+    heading = heading + '\n\n' + data.description
+}
+?>
+
+<?js= heading ?>
+
+.. currentmodule:: <?js= data.qualname ?>
+<?js
+data.members.forEach(function(member){
+    print(self.partial('member.tmpl', member))
+})
+
+data.functions.forEach(function(func){
+    print('\n' + self.partial('function.tmpl', func).trim())
+})
+
+data.classes.forEach(function(cls){
+ print('\n' + self.partial('class.tmpl', cls))
+})
+
+?>
+
+

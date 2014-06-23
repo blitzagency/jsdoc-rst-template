@@ -1,0 +1,36 @@
+<?js
+var description;
+var types;
+var defaultvalue;
+var name = obj.name;
+
+
+if(obj.description){
+    description = obj.description.split('\n').join('\n    ');
+}
+
+if(obj.type && obj.type.names){
+    types = obj.type.names.join(', ');
+}
+
+if(obj.defaultvalue != undefined){
+    defaultvalue = obj.defaultvalue;
+}
+?>
+.. data:: <?js= name ?>
+
+<?js
+    print(this.tab);
+
+    if(description){
+        print(description + '\n\n' + this.tab)
+    }
+
+    if(types) {
+        print(':type: ' + types + '\n' + this.tab)
+    }
+
+    if(defaultvalue){
+        print(':default: ' +  defaultvalue)
+    }
+?>
