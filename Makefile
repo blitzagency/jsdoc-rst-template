@@ -11,7 +11,7 @@ clean:
 	rm -rf ./docs/html
 
 rst-doc:
-	jsdoc -t ./template --recurse example docs/rst/readme.rst -d docs/rst
+	node_modules/.bin/jsdoc -t ./template --recurse example docs/rst/readme.rst -d docs/rst
 
 html-doc:
 	sphinx-build -b html -c ./ ./docs/rst ./docs/html
