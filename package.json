@@ -1,6 +1,6 @@
 {
   "name": "jsdoc-rst-template",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "jsdoc3 rst template",
   "author": "BLITZ",
   "license": "MIT",
@@ -21,6 +21,6 @@
     "jsdoc": "~3.3.0-alpha8"
   },
   "bin": {
-    "jsdoc": "./jsdoc.js"
+    "jsdoc": "./node_modules/jsdoc/jsdoc.js"
   }
 }
