@@ -106,7 +106,7 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
             if(fileWithSameName){
                 output.push(key);
             }
-            output.push(key+'/index');
+            output.push(key+'/__index__');
         });
         return output;
     }
