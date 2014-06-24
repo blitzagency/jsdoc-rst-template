@@ -41,12 +41,12 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
         // console.log(location)
         // console.log(contents)
         // var contents = [];
-        var fileLocation = location + 'index' + helper.fileExtension;
+        var fileLocation = location + '__index__' + helper.fileExtension;
         var fileContents = [];
         _.each(contents, function(child, key){
             // is directory?
             if(Object.keys(child).length){
-                fileContents.push(location + key + '/index');
+                fileContents.push(location + key + '/__index__');
                 // @TODO might need to check if this is also a file?
                 // could use maybeGetContextForName ?
                 // if so.... uncomment this:

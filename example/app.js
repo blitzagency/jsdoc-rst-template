@@ -3,6 +3,7 @@
  * @module zap
  */
 
+
 define(function (require, exports, module) {
 
 var marionette = require('marionette');
@@ -15,6 +16,8 @@ var template = require('hbs!../templates/template');
  * .. warning::
  *
  *    Don't mess with Texas
+ *
+ * warning
  *
  * @var
  * @type {Number}
@@ -30,6 +33,7 @@ var SOME_MODULE_VAR = true;
  * @default
  * @memberOf zap
  */
+
 var EXPLODER = 10;
 
 
@@ -45,6 +49,8 @@ var EXPLODER = 10;
  * @example
  * var foo = require('foo');
  * var result = foo.moduleFunction('foo/bar.txt', 'bar.zip', '*')
+ * example
+ *
  */
 function moduleFunction(source, filename, symbol){
 
@@ -74,6 +80,8 @@ var ItemView = marionette.ItemView.extend(
      * @constructs
      * @extends marionette.ItemView
      * @param {object} [options] Options for Initialization
+     *
+     *warning
      *
      * @example
      * var foo = 1;
