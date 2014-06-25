@@ -25,6 +25,7 @@ make serve
 or for your project:
 
 ```bash
+npm install jsdoc
 npm install jsdoc-rst-template
 ./node_modules/.bin/jsdoc -t ./node_modules/jsdoc-rst-template/template/ --recurse path/to/your/js -d ./doc/rst
 ```
