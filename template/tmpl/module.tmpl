@@ -3,11 +3,15 @@ var self = this;
 var data = obj.docs;
 var heading;
 
-heading = data.qualname + '\n' +
-          this.repeat('=', data.qualname.length)
+heading = data.name + '\n' +
+          this.repeat('=', data.name.length)
 
 if(data.description){
-    heading = heading + '\n\n' + data.description
+    heading = heading + '\n\n' +
+    '.. code-block:: js\n\n' +
+    self.tab + 'var module = require(\'' + data.qualname.split('.').join('/') + '\')' +
+    '\n\n' +
+    data.description + '\n\n'
 }
 ?>
 

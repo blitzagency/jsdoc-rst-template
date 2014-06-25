@@ -1,7 +1,7 @@
 {
   "name": "jsdoc-rst-template",
-  "version": "0.0.8",
-  "description": "jsdoc3 rst template",
+  "version": "0.0.9",
+  "description": "jsdoc rst template",
   "author": "BLITZ",
   "license": "MIT",
   "devDependencies": {

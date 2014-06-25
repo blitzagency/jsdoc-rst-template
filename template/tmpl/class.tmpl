@@ -8,13 +8,23 @@ var examples = obj.examples;
 var methods = self.find({kind: 'function', memberof: obj.longname});
 var tabs = 1;
 
+var qualname = obj.longname.split('.');
+var classname = qualname.pop();
+var modulename = qualname.join('/');
+var importSig = '.. code-block:: js\n\n' + self.tab +
+                'var cls = require(\'' + modulename + '\').'+ classname;
+
 ?>
 .. class:: <?js= obj.name ?> <?js= obj.signature ?>
 
 <?js
+print(self.formatTextWithTabs(importSig, tabs) + '\n\n');
+
 if(description){
     print(self.formatTextWithTabs(description, tabs) + '\n\n');
 }
+
+
 
 if(fields){
     print(self.formatTextWithTabs(fields, tabs) + '\n');

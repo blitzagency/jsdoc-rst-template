@@ -84,6 +84,7 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
             var module = moduleData[name];
 
             ctx.qualname = name;
+            ctx.name = key;
             ctx.description = module.description;
             generateModule(ctx);
         });
