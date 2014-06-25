@@ -12,7 +12,7 @@ var qualname = obj.longname.split('.');
 var classname = qualname.pop();
 var modulename = qualname.join('/');
 var importSig = '.. code-block:: js\n\n' + self.tab +
-                'var cls = require(\'' + modulename + '\').'+ classname;
+                'var ' + classname + ' = require(\'' + modulename + '\').'+ classname;
 
 ?>
 .. class:: <?js= obj.name ?> <?js= obj.signature ?>
