@@ -70,7 +70,7 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
     function recurseDirectoryObject(obj, prefix){
         prefix = prefix || '';
         _.each(obj, function(item, key){
-            if(Object.keys(item).length){
+            if(Object.keys(item).length) {
                 // its not a leaf(file), keep going
                 var loc = prefix+key+'/';
                 createTOCIndexFile(loc, item);
