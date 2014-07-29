@@ -140,7 +140,7 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
 
     // builds all of the sub files and index's, also returns the structure
     var tocObj = parseTOC(toc);
-    var toc = buildRootTOC(tocObj);
+    toc = buildRootTOC(tocObj);
     toc.sort();
     docs.toc = toc.join('\n    ');
     utils.generate('Index', docs, filename, tmpl, resolveLinks);
