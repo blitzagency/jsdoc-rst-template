@@ -8,22 +8,22 @@ var outdir = env.opts.destination;
 
 
 function ensureDir(p) {
-	"use strict";
+    "use strict";
 
-	var parts = path.dirname(p).split(path.sep);
+    var parts = path.dirname(p).split(path.sep);
 
-	parts.reduce(function (previousValue, currentValue, index, array) {
-		var p = path.join(previousValue, currentValue);
+    parts.reduce(function (previousValue, currentValue, index, array) {
+        var p = path.join(previousValue, currentValue);
 
-		try {
-			if (!fs.exists(p)) {
-				fs.mkdirSync(p);
-			}
-		} catch (e) {
-		}
+        try {
+            if (!fs.existsSync(p)) {
+                fs.mkdirSync(p);
+            }
+        } catch (e) {
+        }
 
-		return p;
-	}, path.sep);
+        return p;
+    }, path.sep);
 }
 
 
