@@ -107,7 +107,9 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
             if(fileWithSameName){
                 output.push(key);
             }
-            output.push(key+'/__index__');
+            if (Object.keys(tocObj).length) {
+                output.push(key+'/__index__');
+            }
         });
         return output;
     }
