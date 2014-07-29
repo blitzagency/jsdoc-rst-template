@@ -145,7 +145,7 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
     toc = buildRootTOC(tocObj);
     toc.sort();
     docs.toc = toc.join('\n    ');
-    utils.generate('Index', docs, filename, tmpl, resolveLinks);
-    utils.generate('api', docs, 'api'+helper.fileExtension, apiTmpl, resolveLinks);
+    //utils.generate('Index', docs, filename, tmpl, resolveLinks);
+    utils.generate('Index', docs, 'index'+helper.fileExtension, apiTmpl, resolveLinks);
 };
 
