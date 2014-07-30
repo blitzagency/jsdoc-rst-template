@@ -31,6 +31,10 @@ data.classes.forEach(function(cls){
  print('\n' + self.partial('class.tmpl', cls))
 })
 
+data.namespaces.forEach(function(ns){
+ print('\n' + self.partial('namespace.tmpl', ns))
+})
+
 ?>
 
 

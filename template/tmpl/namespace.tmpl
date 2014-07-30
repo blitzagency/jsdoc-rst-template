@@ -1,0 +1,26 @@
+<?js
+var self = this;
+var partial = this.partial.bind(this);
+var formatTextWithTabs = this.formatTextWithTabs.bind(this);
+var description = obj.description;
+var fields = self.partial('fields.tmpl', obj);
+var tabs = 1;
+
+var qualname = obj.longname.split('.');
+var modulename = qualname.join('/');
+
+?>
+.. data:: <?js= obj.name ?>
+
+<?js
+if(description){
+    print(self.formatTextWithTabs(description, tabs) + '\n\n');
+}
+
+
+
+obj.members.forEach(function(member){
+ print('\n' + self.formatTextWithTabs(self.partial('attribute.tmpl', member), tabs));
+})
+
+?>

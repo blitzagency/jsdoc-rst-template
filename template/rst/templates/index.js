@@ -13,14 +13,24 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
 
 
     function maybeGetContextForName(memberof){
-        var response = {};
+        var response = {},
+            kinds = ["class", "function", "member"];
+
         response.members = find({kind: 'member', memberof: memberof});
         response.functions = find({kind: 'function', memberof: memberof});
         response.classes = find({kind: 'class', memberof: memberof});
+        response.namespaces = find({kind: 'namespace', memberof: memberof});
 
-        if(response.members.length === 0 &&
+        _.each(response.namespaces, function(item, key) {
+            item.members = _.flatten(kinds.map(function (kind) {
+                return find({kind: kind, memberof: item.longname});
+            }));
+        });
+
+        if (response.members.length === 0 &&
            response.functions.length === 0 &&
-           response.classes.length === 0 ){
+           response.classes.length === 0 &&
+           response.namespaces.length === 0) {
             return false;
         }
 
