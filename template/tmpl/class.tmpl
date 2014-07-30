@@ -5,6 +5,7 @@ var formatTextWithTabs = this.formatTextWithTabs.bind(this);
 var description = obj.description;
 var fields = self.partial('fields.tmpl', obj);
 var examples = obj.examples;
+var attributes = self.find({kind: 'member', memberof: obj.longname});
 var methods = self.find({kind: 'function', memberof: obj.longname});
 var tabs = 1;
 
@@ -35,6 +36,15 @@ if(examples && examples.length && examples.forEach){
         ex.formatTextWithTabs = formatTextWithTabs;
         var str = self.partial('example.tmpl', ex).trim();
         print(self.formatTextWithTabs(str, tabs) + '\n\n');
+    });
+}
+
+if (attributes && attributes.length && attributes.forEach) {
+    attributes.forEach(function(attribute) {
+        attribute.partial = partial
+        attribute.formatTextWithTabs = formatTextWithTabs;
+        var str = self.partial('attribute.tmpl', attribute).trim();
+        print(self.formatTextWithTabs(str, tabs) + '\n');
     });
 }
 
