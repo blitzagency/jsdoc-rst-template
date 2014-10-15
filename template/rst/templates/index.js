@@ -92,10 +92,17 @@ module.exports = function(modules, find, docs, filename, resolveLinks){
             if(!ctx) return;
 
             var module = moduleData[name];
+            // console.log("<jsdoc-rst-templates>");
+            // console.log("name: ", name);
+            // console.log("module: ", module);
+            // console.log("</jsdoc-rst-templates>");
+            if (_.isUndefined(module)) {
+                return;
+            }
 
             ctx.qualname = name;
             ctx.name = key;
-            ctx.description = module.description;
+            ctx.description = module.description || "";
             generateModule(ctx);
         });
     }
