@@ -1,8 +1,11 @@
 <?js
 var data = obj[0];
-?>
-:return: <?js=data.description?>
-<?js
+
+if (data.description) {
+    print(':return: ' + data.description);
+    print('\n');
+}
+
 if(data.type.names){
     print(':rtype: ' + data.type.names.join('|'));
 }

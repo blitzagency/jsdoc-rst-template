@@ -2,7 +2,7 @@
 var self = this;
 var partial = this.partial.bind(this);
 var formatTextWithTabs = this.formatTextWithTabs.bind(this);
-var description = obj.description;
+var description = obj.description || "";
 var fields = self.partial('fields.tmpl', obj);
 var tabs = 1;
 
